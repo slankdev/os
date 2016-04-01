@@ -1,1 +1,1 @@
-..\z_tools\nask.exe ipl.nas ipl.bin ipl.lst
+../z_tools/nask.exe ipl.nas ipl.bin ipl.lst
