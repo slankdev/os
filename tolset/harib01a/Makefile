@@ -47,9 +47,8 @@ bootpack.hrb : bootpack.bim Makefile
 	$(BIM2HRB) bootpack.bim bootpack.hrb 0
 
 haribote.sys : asmhead.bin bootpack.hrb Makefile
-	cat asmhead.bin > haribote.sys
-	cat bootpack.hrb > haribote.sys
-	# copy /B asmhead.bin+bootpack.hrb haribote.sys
+	cat asmhead.bin >  haribote.sys
+	cat bootpack.hrb >> haribote.sys
 
 haribote.img : ipl10.bin haribote.sys Makefile
 	$(EDIMG)   imgin:../z_tools/fdimg0at.tek \
