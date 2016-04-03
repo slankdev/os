@@ -47,8 +47,8 @@ bootpack.hrb : bootpack.bim Makefile
 	$(BIM2HRB) bootpack.bim bootpack.hrb 0
 
 haribote.sys : asmhead.bin bootpack.hrb Makefile
-	cat asmhead.bin >  haribote.sys
-	cat bootpack.hrb >> haribote.sys
+	cat asmhead.bin bootpack.hrb >  haribote.sys
+
 
 haribote.img : ipl10.bin haribote.sys Makefile
 	$(EDIMG)   imgin:../z_tools/fdimg0at.tek \
@@ -63,7 +63,7 @@ img :
 
 run :
 	$(MAKE) img
-	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin
+	$(COPY) haribote.img ../z_tools/qemu/fdimage0.bin
 	$(MAKE) -C ../z_tools/qemu
 
 install :
