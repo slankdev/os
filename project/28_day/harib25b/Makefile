@@ -4,8 +4,8 @@ INCPATH  = ../z_tools/haribote/
 MAKE     = $(TOOLPATH)make.exe -r
 EDIMG    = $(TOOLPATH)edimg.exe
 IMGTOL   = $(TOOLPATH)imgtol.com
-COPY     = copy
-DEL      = del
+COPY     = cp
+DEL      = rm
 
 # デフォルト動作
 

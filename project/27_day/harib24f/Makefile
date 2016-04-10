@@ -22,8 +22,8 @@ RULEFILE = $(TOOLPATH)haribote/haribote.rul
 EDIMG    = $(TOOLPATH)edimg.exe
 IMGTOL   = $(TOOLPATH)imgtol.com
 GOLIB    = $(TOOLPATH)golib00.exe 
-COPY     = copy
-DEL      = del
+COPY     = cp
+DEL      = rm
 
 # デフォルト動作
 
@@ -53,7 +53,7 @@ bootpack.hrb : bootpack.bim Makefile
 	$(BIM2HRB) bootpack.bim bootpack.hrb 0
 
 haribote.sys : asmhead.bin bootpack.hrb Makefile
-	copy /B asmhead.bin+bootpack.hrb haribote.sys
+	cat asmhead.bin bootpack.hrb > haribote.sys
 
 apilib.lib : Makefile $(OBJS_API)
 	$(GOLIB) $(OBJS_API) out:apilib.lib
@@ -212,7 +212,7 @@ img :
 
 run :
 	$(MAKE) img
-	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin
+	$(COPY) haribote.img ../z_tools/qemu/fdimage0.bin
 	$(MAKE) -C ../z_tools/qemu
 
 install :

@@ -1,0 +1,11 @@
+--- Makefile.org	2016-04-04 02:05:58.680213468 +0900
++++ Makefile	2016-04-04 02:06:28.496881749 +0900
+@@ -70,7 +70,7 @@
+ 
+ run :
+ 	$(MAKE) img
+-	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin
++	$(COPY) haribote.img ../z_tools/qemu/fdimage0.bin
+ 	$(MAKE) -C ../z_tools/qemu
+ 
+ install :
