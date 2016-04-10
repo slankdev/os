@@ -16,8 +16,8 @@ BIM2HRB  = $(TOOLPATH)bim2hrb.exe
 RULEFILE = $(TOOLPATH)haribote/haribote.rul
 EDIMG    = $(TOOLPATH)edimg.exe
 IMGTOL   = $(TOOLPATH)imgtol.com
-COPY     = copy
-DEL      = del
+COPY     = cp
+DEL      = rm
 
 # デフォルト動作
 
@@ -50,7 +50,7 @@ hello.hrb : hello.nas Makefile
 	$(NASK) hello.nas hello.hrb hello.lst
 
 haribote.sys : asmhead.bin bootpack.hrb Makefile
-	copy /B asmhead.bin+bootpack.hrb haribote.sys
+	cat asmhead.bin bootpack.hrb > haribote.sys
 
 haribote.img : ipl10.bin haribote.sys hello.hrb Makefile
 	$(EDIMG)   imgin:../z_tools/fdimg0at.tek \
@@ -79,7 +79,7 @@ img :
 
 run :
 	$(MAKE) img
-	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin
+	$(COPY) haribote.img ../z_tools/qemu/fdimage0.bin
 	$(MAKE) -C ../z_tools/qemu
 
 install :
