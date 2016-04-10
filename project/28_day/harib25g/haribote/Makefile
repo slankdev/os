@@ -17,8 +17,8 @@ RULEFILE = ../haribote.rul
 EDIMG    = $(TOOLPATH)edimg.exe
 IMGTOL   = $(TOOLPATH)imgtol.com
 GOLIB    = $(TOOLPATH)golib00.exe 
-COPY     = copy
-DEL      = del
+COPY     = cp
+DEL      = rm
 
 # デフォルト動作
 

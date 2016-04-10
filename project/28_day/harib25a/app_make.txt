@@ -15,8 +15,8 @@ RULEFILE = ../haribote.rul
 EDIMG    = $(TOOLPATH)edimg.exe
 IMGTOL   = $(TOOLPATH)imgtol.com
 GOLIB    = $(TOOLPATH)golib00.exe 
-COPY     = copy
-DEL      = del
+COPY     = cp
+DEL      = rm
 
 # デフォルト動作
 
@@ -55,7 +55,7 @@ haribote.img : ../haribote/ipl10.bin ../haribote/haribote.sys $(APP).hrb \
 
 run :
 	$(MAKE) haribote.img
-	$(COPY) haribote.img ..\..\z_tools\qemu\fdimage0.bin
+	$(COPY) haribote.img ../../z_tools/qemu/fdimage0.bin
 	$(MAKE) -C ../../z_tools/qemu
 
 full :

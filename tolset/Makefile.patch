@@ -1,7 +1,7 @@
---- Makefile.org	2016-04-04 02:05:58.680213468 +0900
-+++ Makefile	2016-04-04 02:06:28.496881749 +0900
-@@ -12,8 +12,8 @@
- RULEFILE = $(TOOLPATH)haribote/haribote.rul
+--- Makefile.org	2016-04-10 20:41:55.408435022 +0900
++++ Makefile	2016-04-10 20:43:03.091924993 +0900
+@@ -4,8 +4,8 @@
+ MAKE     = $(TOOLPATH)make.exe -r
  EDIMG    = $(TOOLPATH)edimg.exe
  IMGTOL   = $(TOOLPATH)imgtol.com
 -COPY     = copy
@@ -11,12 +11,21 @@
  
  # デフォルト動作
  
-@@ -70,7 +70,7 @@
+@@ -51,7 +51,7 @@
  
  run :
- 	$(MAKE) img
+ 	$(MAKE) haribote.img
 -	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin
 +	$(COPY) haribote.img ../z_tools/qemu/fdimage0.bin
  	$(MAKE) -C ../z_tools/qemu
  
  install :
+@@ -84,7 +84,7 @@
+ 
+ run_full :
+ 	$(MAKE) full
+-	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin
++	$(COPY) haribote.img ../z_tools/qemu/fdimage0.bin
+ 	$(MAKE) -C ../z_tools/qemu
+ 
+ install_full :

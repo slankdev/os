@@ -1,0 +1,22 @@
+--- app_make.txt.org	2016-04-10 20:48:22.986885931 +0900
++++ app_make.txt	2016-04-10 20:48:55.840389616 +0900
+@@ -15,8 +15,8 @@
+ EDIMG    = $(TOOLPATH)edimg.exe
+ IMGTOL   = $(TOOLPATH)imgtol.com
+ GOLIB    = $(TOOLPATH)golib00.exe 
+-COPY     = copy
+-DEL      = del
++COPY     = cp
++DEL      = rm
+ 
+ # デフォルト動作
+ 
+@@ -55,7 +55,7 @@
+ 
+ run :
+ 	$(MAKE) haribote.img
+-	$(COPY) haribote.img ..\..\z_tools\qemu\fdimage0.bin
++	$(COPY) haribote.img ../../z_tools/qemu/fdimage0.bin
+ 	$(MAKE) -C ../../z_tools/qemu
+ 
+ full :

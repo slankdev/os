@@ -59,7 +59,7 @@ haribote.img : haribote/ipl20.bin haribote/haribote.sys Makefile \
 
 run :
 	$(MAKE) haribote.img
-	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin
+	$(COPY) haribote.img ../z_tools/qemu/fdimage0.bin
 	$(MAKE) -C ../z_tools/qemu
 
 install :
@@ -96,7 +96,7 @@ full :
 
 run_full :
 	$(MAKE) full
-	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin
+	$(COPY) haribote.img ../z_tools/qemu/fdimage0.bin
 	$(MAKE) -C ../z_tools/qemu
 
 install_full :
